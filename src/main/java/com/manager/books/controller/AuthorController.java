@@ -21,7 +21,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<AuthorResponseDto> create(@Valid @RequestBody AuthorRequestDto dto){
+    public ResponseEntity<AuthorResponseDto> create(@RequestBody @Valid AuthorRequestDto dto){
         return ResponseEntity.ok(service.create(dto));
     }
 
@@ -36,7 +36,7 @@ public class AuthorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AuthorResponseDto> update(@PathVariable long id, @Valid @RequestBody AuthorRequestDto dto){
+    public ResponseEntity<AuthorResponseDto> update(@PathVariable long id, @RequestBody @Valid AuthorRequestDto dto){
         return ResponseEntity.ok(service.update(id, dto));
     }
 
@@ -56,7 +56,7 @@ public class AuthorController {
     }
 
     @GetMapping("/genre")
-    public ResponseEntity<Set<AuthorResponseDto>> viewAuthorsByGenreName(@Valid @RequestBody GenreRequestDto dto){
+    public ResponseEntity<Set<AuthorResponseDto>> viewAuthorsByGenreName(@RequestBody @Valid GenreRequestDto dto){
         return ResponseEntity.ok(service.viewAuthorsByGenreName(dto));
     }
 

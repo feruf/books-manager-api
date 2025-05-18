@@ -5,8 +5,6 @@ import com.manager.books.module.dto.request.GenreRequestDto;
 import com.manager.books.module.dto.response.AuthorResponseDto;
 import com.manager.books.module.entity.Author;
 import com.manager.books.repository.AuthorRepository;
-import com.manager.books.repository.BookRepository;
-import com.manager.books.repository.GenreRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +25,7 @@ public class AuthorServiceImpl implements AuthorService{
     public AuthorResponseDto create(AuthorRequestDto dto) {
         Author author = mapper.map(dto, Author.class);
         author = repository.save(author);
+        //AuthorResponseDto result = mapper.map(author, AuthorResponseDto.class);
         return mapper.map(author, AuthorResponseDto.class);
     }
 

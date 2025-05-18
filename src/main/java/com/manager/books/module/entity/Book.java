@@ -11,6 +11,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "book")
+@Getter
+@Setter
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +26,10 @@ public class Book {
     @NotNull(message = "Publishing year should not be empty")
     private LocalDate publishingYear;
 
-    @Getter
     @ManyToOne
     @JoinColumn(name = "genre_id", nullable = false)
-    @Setter
     private Genre genre;
 
-    @Getter
-    @Setter
     @ManyToMany
     @JoinTable(
             name = "books_authors",

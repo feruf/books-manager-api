@@ -1,6 +1,4 @@
 package com.manager.books.module.dto.request;
-
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -20,12 +18,11 @@ public class BookRequestDto {
     private String title;
 
     @NotNull(message = "The book should have a genre")
-    @Min(value = 1, message = "Genre should be higher than 0")
-    private Long genreId;
+    private GenreRequestDto genre;
 
     @NotNull(message = "Publishing year should not be empty")
     private LocalDate publishingYear;
 
     @NotNull(message = "The book should contain authors")
-    private Set<Long> authorsId;
+    private Set<AuthorRequestDto> authorsId;
 }
