@@ -7,8 +7,6 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashSet;
 import java.util.Set;
 
 @RestController
@@ -21,7 +19,7 @@ public class BookController {
         this.service = service;
     }
 
-    @PutMapping()
+    @PostMapping()
     public ResponseEntity<BookResponseDto> create(@Valid @RequestBody BookRequestDto dto){
         return ResponseEntity.ok(service.create(dto));
     }

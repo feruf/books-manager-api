@@ -10,8 +10,8 @@ import java.util.Set;
 
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
-    @Query("""
-        SELECT a FROM Author a
+   @Query("""
+        select a FROM Author a
         JOIN a.books b
         WHERE LOWER(b.title) = LOWER(:title)
 """)

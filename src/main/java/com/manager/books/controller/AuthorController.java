@@ -5,16 +5,13 @@ import com.manager.books.module.dto.request.GenreRequestDto;
 import com.manager.books.module.dto.response.AuthorResponseDto;
 import com.manager.books.service.AuthorService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashSet;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/author")
 @Validated
 public class AuthorController {
     private final AuthorService service;
